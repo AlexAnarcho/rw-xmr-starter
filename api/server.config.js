@@ -14,12 +14,12 @@
 
 /** @type {import('fastify').FastifyServerOptions} */
 const config = {
-  requestTimeout: 15_000,
-  logger: {
-    // Note: If running locally using `yarn rw serve` you may want to adjust
-    // the default non-development level to `info`
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'warn',
-  },
+    requestTimeout: 15_000,
+    logger: {
+        // Note: If running locally using `yarn rw serve` you may want to adjust
+        // the default non-development level to `info`
+        level: process.env.NODE_ENV === 'development' ? 'debug' : 'warn',
+    },
 }
 
 /**
@@ -35,18 +35,20 @@ const config = {
 
 /** @type {import('@redwoodjs/api-server/dist/types').FastifySideConfigFn} */
 const configureFastify = async (fastify, options) => {
-  if (options.side === 'api') {
-    fastify.log.trace({ custom: { options } }, 'Configuring api side')
-  }
+    if (options.side === 'api') {
+        fastify.log.trace({ custom: { options } }, 'Configuring api side')
+        // 💡 register the compiled version of our plugin
+        fastify.register(require('api/dist/lib/xmrFastifyPlugin'))
+    }
 
-  if (options.side === 'web') {
-    fastify.log.trace({ custom: { options } }, 'Configuring web side')
-  }
+    if (options.side === 'web') {
+        fastify.log.trace({ custom: { options } }, 'Configuring web side')
+    }
 
-  return fastify
+    return fastify
 }
 
 module.exports = {
-  config,
-  configureFastify,
+    config,
+    configureFastify,
 }

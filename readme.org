@@ -1,0 +1,30 @@
+#+title: RW XMR Starter - RedwoodJS & Monero
+
+* About
+This is a starter project for the [[https://redwoodjs.com/][RedwoodJS framework]]. It includes a fastifyPlugin that opens a [[https://github.com/monero-ecosystem/monero-javascript][Monero Wallet with monero-javascript]] on the server (API) side.
+
+
+* Installation
+1. Fork the repo
+2. Run ~yarn rw prisma generate~ and ~yarn~ in the project root
+3. Create a monero wallet for your app
+   1. Install ~monero-wallet-cli~ and run it
+   2. Cd into ~wallet/~
+   3. Create a new wallet with a strong password
+   4. Write down your seed and back it up securely
+   5. Exit the wallet again with ~exit~
+4. Copy and rename the ~.env.example~ to ~.env~ and fill out the variables
+   + ~MONERO_DAEMON_URL~ => The connection to a monero remote node
+   + ~MONERO_WALLET_PASSWORD~ => The password to your monero wallet file
+   + ~MONERO_WALLET_PATH~ => Location of your monero wallet file
+
+
+* TODO
+- [ ] Repeatedly send all money to another wallet functionality
+- [ ] Optionally add env vars for username & password of node
+
+* Notes
+
+  Seed: tucks hashing match abducts kept ravine bias onboard
+island tiger wickets depth nodes linen rhino emotion
+session javelin plotting payment vary asylum cogs colony cogs
