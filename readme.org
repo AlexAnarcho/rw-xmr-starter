@@ -19,6 +19,7 @@ This is a starter project for the [[https://redwoodjs.com/][RedwoodJS framework]
    + ~MONERO_WALLET_PATH~ => Location of your monero wallet file
 
 
+
 * TODO
 - [ ] Repeatedly send all money to another wallet functionality
 - [ ] Optionally add env vars for username & password of node
